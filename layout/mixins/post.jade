@@ -8,6 +8,8 @@ mixin postInfo(item, showCate)
                 a(class="post-category" href=url_for(category.path))= "#"+category.name
         if item.from && (is_home() || is_post())
             a.post-from(href=item.from target="_blank" title=item.from) 翻译 · 原文地址
+        if showCate
+            span= readingTime(item.content)
 
 //- Index Page
 mixin posts()
