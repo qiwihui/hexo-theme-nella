@@ -12,5 +12,13 @@ link(rel="icon", href=url_for(theme.favicon))
 link(rel="stylesheet", href=url_for("css/nella.css"))
 link(rel="stylesheet", href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous")
 
+if theme.google_adsense.page_level_ads
+    script(async, src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js")
+    script.  
+        (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "#{theme.google_adsense.data_ad_client}",
+        enable_page_level_ads: true
+        });
+
 - var xml = config.url + '/atom.xml'
     link(rel="search", type="application/opensearchdescription+xml", href=xml, title=config.title)

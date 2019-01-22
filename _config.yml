@@ -25,6 +25,7 @@ ga: UA-93356635-1
 # Adsense
 google_adsense:
   enable: false
+  page_level_ads: false
   data_ad_client: ca-pub-8935595858652656
 
 # Copyright Infomation
