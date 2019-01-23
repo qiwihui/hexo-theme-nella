@@ -24,9 +24,10 @@ ga: UA-93356635-1
 
 # Adsense
 google_adsense:
-  enable: false
   page_level_ads: false
+  unit_level_ads: false
   data_ad_client: ca-pub-8935595858652656
+  data_ad_slot: 6325921777
 
 # Copyright Infomation
 # post_copyright:

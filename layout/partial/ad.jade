@@ -1,5 +1,5 @@
-if theme.google_adsense.enable
+if theme.google_adsense.unit_level_ads
     script(async='' src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js")
-    ins.adsbygoogle(style="display:block" data-ad-client="#{theme.google_adsense.data_ad_client}" data-ad-format="auto")
+    ins.adsbygoogle(style="display:block" data-ad-client="#{theme.google_adsense.data_ad_client}" data-ad-slot="#{theme.google_adsense.data_ad_slot}" data-ad-format="auto" data-full-width-responsive="true")
     script.
         (adsbygoogle = window.adsbygoogle || []).push({});
