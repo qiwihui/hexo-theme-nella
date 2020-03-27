@@ -10,6 +10,10 @@ mixin postInfo(item, showCate)
             a.post-from(href=item.from target="_blank" title=item.from) 翻译 · 原文地址
         if showCate
             span= readingTime(item.content)
+        if item.tags
+            span.post-tags <i class="fa fa-tags" aria-hidden="true"></i>
+                for tag in item.tags.toArray()
+                    a(href=url_for(tag.path))=  '#' + tag.name
 
 //- Index Page
 mixin posts()
@@ -23,7 +27,7 @@ mixin posts()
                     +postInfo(item, true)
                     .post-content
                         != item.excerpt
-                    // a.read-more(href= url_for(item.path))!= __('more')
+                    a.read-more(href= url_for(item.path))!= __('more')
         - })
 
 //- Archive Page
