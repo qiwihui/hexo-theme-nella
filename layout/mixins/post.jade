@@ -1,4 +1,4 @@
-mixin postInfo(item, showCate)
+mixin postInfo(item, showCate, showTag)
     .post-info
         if page.path != "search/index.html" && page.path != "about/index.html" && page.path != "questions.index.html"
             != full_date(item.date, 'll')
@@ -10,6 +10,11 @@ mixin postInfo(item, showCate)
             a.post-from(href=item.from target="_blank" title=item.from) 翻译 · 原文地址
         if showCate
             span= readingTime(item.content)
+        if showTag && item.tags
+            span.post-tags <i class="fa fa-tags" aria-hidden="true"></i>
+                for tag in item.tags.toArray()
+                    a(href=url_for(tag.path))=  '#' + tag.name
+
 
 //- Index Page
 mixin posts()
@@ -20,7 +25,7 @@ mixin posts()
                     h2.post-title
                         a.post-title-link(href= url_for(item.path))
                             != item.title
-                    +postInfo(item, true)
+                    +postInfo(item, false, true)
                     .post-content
                         != item.excerpt
                     a.read-more(href= url_for(item.path))!= __('more')
@@ -38,7 +43,7 @@ mixin postList()
             if change 
                 h2.archive-year!= year
             .post-item
-                +postInfo(item, false)
+                +postInfo(item, false, false)
                 a.post-title-link(href= url_for(item.path))
                     != item.title
         - })
@@ -49,7 +54,7 @@ mixin post(item)
         article.post-block
             h1.post-title
                 != item.title
-            +postInfo(item, true)
+            +postInfo(item, true, false)
             .post-content
                 != item.content
             if item.tags
