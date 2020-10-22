@@ -7,7 +7,6 @@ name: 触发博客构建
 
 jobs:
   trigger_publish:
-    needs: build
     name: 触发博客构建
     runs-on: ubuntu-latest
     steps:
