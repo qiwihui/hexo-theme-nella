@@ -37,7 +37,6 @@ legend { border: 0; padding: 0 }
 textarea { overflow: auto }
 optgroup { font-weight: bold }
 td, th { padding: 0 }
-::selection { color: #FFFFFF; background-color: #b21c1c }
 html, body { width: 100%; height: 100% }
 body { max-width: 90%; margin: 5%; color: #000000; font-size: 17px; line-height: 1.6; background-color: #ffffff; font-family: 'Palatino', 'Palatino Linotype', 'Constantia', serif }
 ul.nav, ul.post-list { margin: 0; padding: 0; list-style-type: none }
@@ -47,11 +46,10 @@ a.nav-list-link.active, a.nav-list-link:hover, a.post-title-link:hover { border-
 hr { border: 0px }
 hr { border-top: 2px dashed #ddd }
 iframe, video { max-width: 100%; margin: 1rem auto; display: block }
-table { border-collapse: collapse; border-spacing: 0 }
-table { display: block; overflow: auto; margin: auto; width: 100%; font-size: 15px }
+table { display: inline-block; text-align: center; max-width: 100%; font-size: 15px; overflow: auto; border-collapse: collapse; border-spacing: 0; border-bottom: 2px solid}
 table thead { border-top: 2px solid; border-bottom: 1px solid }
-table tr td { padding: 0 10px; text-align: center; vertical-align: top; white-space: nowrap }
-table tr th { padding: 0 10px; text-align: center; vertical-align: top; white-space: nowrap }
+table tr td { padding: 0 10px; vertical-align: top; white-space: nowrap }
+table tr th { padding: 0 10px; vertical-align: top; white-space: nowrap }
 pre { text-align: normal }
 header { min-height: 60px }
 header .logo-link { float: left }
@@ -85,6 +83,7 @@ header ul.nav-fix-list-child { display: none }
 .post-content h1, .post-content h2 { font-size: 1.3em }
 .post-content h3, .post-content h4, .post-content h5, .post-content h6 { font-size: 1.1em }
 .post-content a { color: #b21c1c; word-break: normal }
+.post-content del { text-decoration-color: #b21c1c; text-decoration: line-through; line-height: 1em}
 .post-content blockquote { margin: 2em 0; padding-left: 20px; border-left: 4px solid #b21c1c }
 .post-content img { display: block; max-width: 100%; margin: 1em auto }
 .post-content > figure.highlight { box-shadow: 0 1px 2px #e3e3e3 }
@@ -144,4 +143,13 @@ table th {color: #000000;}
     margin: 2em 0; 
     padding-left: 20px; 
     border-left: 4px solid #b21c1c
+}
+
+::-moz-selection {
+  background-color: #b21c1c;
+  color: #FFFFFF;
+}
+::selection {
+  background-color: #b21c1c;
+  color: #FFFFFF;
 }
